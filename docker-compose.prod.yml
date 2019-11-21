@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+
+  website:
+    build:
+      context: .
+      dockerfile: ./docker/web.Dockerfile
+    ports:
+      - "80:5000"
+    depends_on:
+      - redis
+    command: env FLASK_APP=hello.py flask run --host=0.0.0.0
+
+  redis:
+    image: library/redis:latest
+    restart: always
+    volumes:
+      - dbredis:/data
+
+volumes:
+  dbredis:
+    driver: local
+
