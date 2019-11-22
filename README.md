@@ -1,4 +1,4 @@
-# K8S Test with DO and Kompose
+# K8S Test with DigitalOcean
 
 This is a tutorial to learn how to deploy a simple Flask application with a Load Balancer, Redis and some Volumes
 
